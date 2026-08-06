@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isStarsheAdmin() {
+      return request.auth != null
+        && request.auth.token.email in [
+          "starshe@example.com",
+          "your-email@example.com"
+        ];
+    }
+
+    match /{allPaths=**} {
+      allow read: if true;
+
+      allow write: if isStarsheAdmin()
+        && request.resource.size < 500 * 1024 * 1024
+        && (
+          request.resource.contentType.matches('image/.*')
+          || request.resource.contentType.matches('audio/.*')
+          || request.resource.contentType.matches('video/.*')
+        );
+    }
+  }
+}
