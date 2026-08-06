@@ -1,0 +1,19 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isStarsheAdmin() {
+      return request.auth != null
+        && request.auth.token.email in [
+          "starshe@example.com",
+          "your-email@example.com"
+        ];
+    }
+
+    match /media/{mediaId} {
+      allow read: if true;
+      allow create, update, delete: if isStarsheAdmin();
+    }
+  }
+}
