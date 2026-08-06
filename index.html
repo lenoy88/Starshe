@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Official Starshe music and video website"
+  >
+
+  <title>Starshe | Official Website</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="star-field">
+    <span class="star star-1">★</span>
+    <span class="star star-2">✦</span>
+    <span class="star star-3">★</span>
+    <span class="star star-4">✧</span>
+    <span class="star star-5">★</span>
+    <span class="star star-6">✦</span>
+    <span class="star star-7">✧</span>
+    <span class="star star-8">★</span>
+  </div>
+
+  <header class="hero" id="home">
+
+    <nav class="navbar">
+
+      <a class="logo" href="#home">
+        <span class="logo-star">★</span>
+        STAR<span>SHE</span>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation menu"
+      >
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+
+        <a href="#home">Home</a>
+
+        <a href="#music">Music</a>
+
+        <a href="#videos">Videos</a>
+
+        <a href="#about">About</a>
+
+        <button
+          class="admin-link"
+          id="openLoginButton"
+        >
+          Admin Login
+        </button>
+
+      </div>
+
+    </nav>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+      <p class="eyebrow">
+        ★ THE OFFICIAL WEBSITE ★
+      </p>
+
+      <h1>
+        STAR<span>SHE</span>
+      </h1>
+
+      <p class="tagline">
+        She does not chase the spotlight.
+        She is the star.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          class="primary-button"
+          href="#music"
+        >
+          Listen Now
+        </a>
+
+        <a
+          class="outline-button"
+          href="#videos"
+        >
+          Watch Videos
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <section class="section" id="music">
+
+      <div class="section-heading">
+
+        <p>★ STREAM THE SOUND ★</p>
+
+        <h2>Latest Music</h2>
+
+      </div>
+
+      <div
+        id="musicGrid"
+        class="media-grid"
+      >
+
+        <p class="empty-message">
+          No music has been uploaded yet.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section
+      class="section dark-section"
+      id="videos"
+    >
+
+      <div class="section-heading">
+
+        <p>
+          ★ WATCH STAR<span>SHE</span> ★
+        </p>
+
+        <h2>Latest Videos</h2>
+
+      </div>
+
+      <div
+        id="videoGrid"
+        class="video-grid"
+      >
+
+        <p class="empty-message">
+          No videos have been uploaded yet.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section
+      class="section about-section"
+      id="about"
+    >
+
+      <div class="about-image-wrap">
+
+        <div class="image-stars">
+          ★ ✦ ★
+        </div>
+
+        <img
+          src="starshe.jpg"
+          alt="Starshe"
+          class="about-image"
+        >
+
+      </div>
+
+      <div class="about-copy">
+
+        <p class="eyebrow">
+          ★ MEET THE ARTIST ★
+        </p>
+
+        <h2>Starshe</h2>
+
+        <p>
+          Starshe is a rapper bringing confidence,
+          personality, and real-life energy to every
+          track. This is the official home for her
+          newest songs, music videos, performances,
+          interviews, and updates.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="footer-logo">
+      ★ STAR<span>SHE</span> ★
+    </div>
+
+    <p>
+      © <span id="year"></span>
+      Starshe. All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- Administrator login window -->
+
+  <div
+    class="modal hidden"
+    id="loginModal"
+  >
+
+    <div class="modal-card small-card">
+
+      <button
+        class="close-button"
+        id="closeLoginButton"
+        aria-label="Close login"
+      >
+        ×
+      </button>
+
+      <p class="modal-star">★</p>
+
+      <h2>Admin Login</h2>
+
+      <p>
+        Starshe and the approved second
+        administrator can sign in.
+      </p>
+
+      <form id="loginForm">
+
+        <label>
+
+          Email
+
+          <input
+            id="loginEmail"
+            type="email"
+            required
+            autocomplete="email"
+          >
+
+        </label>
+
+        <label>
+
+          Password
+
+          <input
+            id="loginPassword"
+            type="password"
+            required
+            autocomplete="current-password"
+          >
+
+        </label>
+
+        <button
+          class="primary-button full-button"
+          type="submit"
+        >
+          Sign In
+        </button>
+
+        <p
+          class="form-message"
+          id="loginMessage"
+        ></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- Administrator dashboard -->
+
+  <div
+    class="modal hidden"
+    id="adminModal"
+  >
+
+    <div class="modal-card admin-card">
+
+      <button
+        class="close-button"
+        id="closeAdminButton"
+        aria-label="Close dashboard"
+      >
+        ×
+      </button>
+
+      <div class="dashboard-header">
+
+        <div>
+
+          <p class="eyebrow">
+            ★ PRIVATE ADMIN AREA ★
+          </p>
+
+          <h2>Starshe Dashboard</h2>
+
+          <p
+            id="signedInAdmin"
+            class="signed-in-admin"
+          ></p>
+
+        </div>
+
+        <button
+          class="secondary-button"
+          id="logoutButton"
+        >
+          Log Out
+        </button>
+
+      </div>
+
+      <div class="upload-tabs">
+
+        <button
+          class="tab-button active"
+          data-tab="musicUploadPanel"
+        >
+          Upload Music
+        </button>
+
+        <button
+          class="tab-button"
+          data-tab="videoUploadPanel"
+        >
+          Upload Video
+        </button>
+
+      </div>
+
+      <section
+        class="upload-panel active"
+        id="musicUploadPanel"
+      >
+
+        <form id="musicUploadForm">
+
+          <label>
+
+            Song title
+
+            <input
+              id="songTitle"
+              type="text"
+              required
+              maxlength="100"
+            >
+
+          </label>
+
+          <label>
+
+            Cover image
+
+            <input
+              id="songCover"
+              type="file"
+              accept="image/*"
+              required
+            >
+
+          </label>
+
+          <label>
+
+            Music file
+
+            <input
+              id="songFile"
+              type="file"
+              accept="audio/*"
+              required
+            >
+
+          </label>
+
+          <button
+            class="primary-button full-button"
+            type="submit"
+          >
+            Upload Song
+          </button>
+
+          <progress
+            id="musicProgress"
+            value="0"
+            max="100"
+          ></progress>
+
+          <p
+            class="form-message"
+            id="musicMessage"
+          ></p>
+
+        </form>
+
+      </section>
+
+      <section
+        class="upload-panel"
+        id="videoUploadPanel"
+      >
+
+        <form id="videoUploadForm">
+
+          <label>
+
+            Video title
+
+            <input
+              id="videoTitle"
+              type="text"
+              required
+              maxlength="100"
+            >
+
+          </label>
+
+          <label>
+
+            Video thumbnail
+
+            <input
+              id="videoThumbnail"
+              type="file"
+              accept="image/*"
+              required
+            >
+
+          </label>
+
+          <label>
+
+            Video file
+
+            <input
+              id="videoFile"
+              type="file"
+              accept="video/*"
+              required
+            >
+
+          </label>
+
+          <button
+            class="primary-button full-button"
+            type="submit"
+          >
+            Upload Video
+          </button>
+
+          <progress
+            id="videoProgress"
+            value="0"
+            max="100"
+          ></progress>
+
+          <p
+            class="form-message"
+            id="videoMessage"
+          ></p>
+
+        </form>
+
+      </section>
+
+      <section class="manage-section">
+
+        <h3>Manage Uploads</h3>
+
+        <div id="adminMediaList"></div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+  <script
+    type="module"
+    src="app.js"
+  ></script>
+
+</body>
+</html>
